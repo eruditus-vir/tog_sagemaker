@@ -16,12 +16,14 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
 ENV PYTHONUNBUFFERED=TRUE
 ENV PYTHONDONTWRITEBYTECODE=TRUE
 ENV PATH="/opt/program:${PATH}"
-ENV PATH="/opt/code:${PATH}"
+#ENV PATH="/opt/code:${PATH}"
 
 
 
 COPY tog_sagemaker /opt/code
+COPY tog_sagemaker/nginx.conf /opt/program/nginx.conf
+COPY tog_sagemaker/serve /opt/program/serve
 WORKDIR /opt/code
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN chmod +x /opt/code/serve
+RUN chmod +x /opt/program/serve
