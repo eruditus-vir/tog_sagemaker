@@ -16,6 +16,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
 ENV PYTHONUNBUFFERED=TRUE
 ENV PYTHONDONTWRITEBYTECODE=TRUE
 ENV PATH="/opt/program:${PATH}"
+ENV PATH="/opt/code:${PATH}"
 
 
 
