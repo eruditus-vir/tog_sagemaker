@@ -23,4 +23,4 @@ COPY tog_sagemaker /opt/code
 WORKDIR /opt/code
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-RUN chmod +x /opt/program/serve
+RUN chmod +x /opt/code/serve
